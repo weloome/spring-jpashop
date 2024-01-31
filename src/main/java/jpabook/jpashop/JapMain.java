@@ -4,7 +4,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import jpabook.jpashop.domain.Book;
+import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.Member;
 
 public class JapMain {
     public static void main(String[] args) {
@@ -16,10 +17,10 @@ public class JapMain {
         tx.begin();
 
         try {
-            Book book = new Book();
-            book.setName("JPA");
-            book.setAuthor("김영한");
-            em.persist(book);
+            Member member = new Member();
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("city", "street", "zipcode"));
+            em.persist(member);
 
             tx.commit();
         } catch (Exception e) {
