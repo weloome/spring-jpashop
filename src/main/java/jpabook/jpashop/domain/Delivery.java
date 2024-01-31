@@ -2,10 +2,8 @@ package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
-public class Delivery {
+public class Delivery extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "DELIVERY_ID")
@@ -16,4 +14,5 @@ public class Delivery {
     private String street;
     private String zipcode;
     private DeliveryStatus status;
+
 }
